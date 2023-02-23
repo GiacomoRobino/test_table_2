@@ -1,0 +1,15 @@
+<div class="top-buttons-container">
+    <div class="">
+        <button (click)="showAddMatch = !showAddMatch">{{showAddMatch? 'Close add match' : 'Open add match'}}</button>
+        <app-add-match *ngIf="showAddMatch"></app-add-match>
+    </div>
+    <div class="">
+        <button (click)="showFilter = !showFilter">{{showFilter? 'Close view filter' : 'Open view filter'}}</button>
+        <app-filter *ngIf="showFilter"></app-filter>
+    </div>
+</div>
+<app-table-header></app-table-header>
+<div *ngFor="let record of dataSource | async | paginator : pageSize : (paginationService.getCurrentPageSource() | async)">
+    <app-row [record]="record"></app-row>
+</div>
+<app-paginator [pageSizeSource]="pageSizeSource"></app-paginator>

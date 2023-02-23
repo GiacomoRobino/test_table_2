@@ -1,0 +1,6 @@
+<div *ngIf="errorSource | async; else successTemplate" class="error-message">
+    Error in retrieving data
+</div>
+<ng-template #successTemplate>
+    <app-table></app-table>
+</ng-template>

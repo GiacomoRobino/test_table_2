@@ -1,0 +1,10 @@
+:root {
+    --columnWidth: 15%;
+  }
+
+.cell {
+  text-align: center;
+  border: 1px solid black;
+  width: var(--columnWidth);
+  padding: 0.5rem;
+}

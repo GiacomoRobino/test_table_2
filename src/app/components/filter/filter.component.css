@@ -1,0 +1,23 @@
+.filter-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.teams-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: 1px solid black;
+    width: 50%;
+}
+
+.selected-team{
+    background-color: red;
+    color: white;
+}
+
+.container{
+    padding: 0.5rem;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+}

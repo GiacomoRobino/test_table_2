@@ -1,0 +1,9 @@
+.top-buttons-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.top-buttons-container button {
+    font-size: 1.2rem;
+    width: 25%;
+}

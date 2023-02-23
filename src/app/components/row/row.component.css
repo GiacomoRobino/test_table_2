@@ -1,0 +1,11 @@
+.row-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.delete-button{
+    width: 100%;
+    height: 100%;
+    font-size: 1.3rem;
+    border-radius: 0.5rem;
+}

@@ -1,0 +1,28 @@
+.container {
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.page-button {
+    text-align: center;
+    margin: 2px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.page-button:hover {
+    background-color:#002ead;
+    transition: 0.7s;
+}
+
+.current-page{
+    background-color: red;
+    color: white;
+}
+
+.buttons-container{
+    display: flex;
+    flex-direction: row;
+}

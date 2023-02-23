@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="filter-container">
+        <div class="teams-container">
+            <div class="">Select home team/s (if none selected, this filter will not be considered):</div>
+            <div class="teams-container">
+                <button *ngFor="let team of homeTeams" 
+                [ngClass]="{'selected-team': team.selected}" (click)="team.selected = !team.selected">{{team.team}}</button>
+            </div>
+        </div>
+        <div class="teams-container">
+            <div class="">Select away team/s (if none selected, this filter will not be considered):</div>
+            <div class="teams-container">
+                <button *ngFor="let team of awayTeams"
+                [ngClass]="{'selected-team': team.selected}" (click)="team.selected = !team.selected">{{team.team}}</button>
+            </div>
+        </div>
+    </div>
+    <button (click)="applyFilter()">Apply filter</button>
+    <button (click)="resetFilter()">Reset Filters</button>
+</div>

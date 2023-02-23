@@ -1,0 +1,18 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <label>
+      Page Size:
+      <input type="number" [min]="0" formControlName="pageSize">
+    </label>
+    <button type="submit" [disabled]="form.invalid">Set Pagination</button>
+</form>
+<div>Current page size: {{pageSize}}</div>
+<div class="buttons-container">
+  <button *ngIf="currentPage !== 0" (click)="changePage(0)">first page</button>
+  <button  *ngIf="currentPage !== 0" (click)="changePage(currentPage - 1)">previous page</button>
+  <button *ngIf="currentPage !== pagesButtons.length - 1" (click)="changePage(currentPage + 1)">next page</button>
+  <button *ngIf="currentPage !== pagesButtons.length - 1" (click)="changePage(pagesButtons.length - 1)">last page</button>
+</div>
+<div class="container">
+    <button class="page-button" *ngFor="let pageNumber of pagesButtons" (click)="changePage(pageNumber - 1)" 
+    [ngClass]="{'current-page': pageNumber - 1 === currentPage}">{{pageNumber}}</button>
+</div>

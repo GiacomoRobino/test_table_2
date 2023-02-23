@@ -1,0 +1,9 @@
+<div class="row-container">
+<div>{{recordId}}</div>
+<div class="cell">{{record.id}}</div>
+<div class="cell">{{record.matchTeams.home}} - {{record.matchTeams.away}}</div>
+<div class="cell">{{record.date}}</div>
+<div class="cell">{{record.time}}</div>
+<div class="cell">{{record.result.home}} - {{record.result.away}}</div>
+<div class="cell"><button class="delete-button" (click)="deleteRecord()">delete</button></div>
+</div>

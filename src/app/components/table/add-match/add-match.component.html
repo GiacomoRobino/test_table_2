@@ -1,0 +1,64 @@
+<div class="container">
+  <form [formGroup]="matchForm" (ngSubmit)="onSubmit()">
+      <label>
+        ID:
+        <input type="text" formControlName="id">
+        <div *ngIf="matchForm.get('id')?.invalid && ((matchForm.get('id')?.dirty || matchForm.get('id')?.touched))">
+          <div *ngIf="matchForm.get('id')?.errors?.['required']">ID is required.</div>
+          <div *ngIf="matchForm.get('id')?.errors?.['minlength']">ID must be at least 1 character long.</div>
+        </div>
+      </label>
+      <br>
+      <label>
+        Home Result:
+        <input type="number" min="0" formControlName="homeResult">
+        <div *ngIf="matchForm.get('homeResult')?.invalid && (matchForm.get('homeResult')?.dirty || matchForm.get('homeResult')?.touched)">
+          <div *ngIf="matchForm.get('homeResult')?.errors?.['required']">Home Result is required.</div>
+        </div>
+      </label>
+      <br>
+      <label>
+        Away Result:
+        <input type="number" min="0" formControlName="awayResult">
+        <div *ngIf="matchForm.get('awayResult')?.invalid && (matchForm.get('awayResult')?.dirty || matchForm.get('awayResult')?.touched)">
+          <div *ngIf="matchForm.get('awayResult')?.errors?.['required']">Away Result is required.</div>
+        </div>
+      </label>
+      <br>
+      <label>
+        Date (YYYY-MM-DD):
+        <input type="date" formControlName="timeDate">
+        <div *ngIf="matchForm.get('timeDate')?.invalid && (matchForm.get('timeDate')?.dirty || matchForm.get('timeDate')?.touched)">
+          <div *ngIf="matchForm.get('timeDate')?.errors?.['required']">Date is required.</div>
+        </div>
+      </label>
+      <br>
+      <label>
+        Time (HH:mm):
+        <input type="time" formControlName="timeTime">
+        <div *ngIf="matchForm.get('timeTime')?.invalid && (matchForm.get('timeTime')?.dirty || matchForm.get('timeTime')?.touched)">
+          <div *ngIf="matchForm.get('timeTime')?.errors?.['required']">Time is required.</div>
+        </div>
+      </label>
+      <br>
+      <label>
+          Home Team Name:
+          <input type="text" formControlName="homeName">
+          <div *ngIf="matchForm.get('homeName')?.invalid && (matchForm.get('homeName')?.dirty || matchForm.get('homeName')?.touched)">
+            <div *ngIf="matchForm.get('homeName')?.errors?.['required']">Home Team Name is required.</div>
+            <div *ngIf="matchForm.get('homeName')?.errors?.['minlength']">Home Team Name must be at least 1 character long.</div>
+          </div>
+        </label>
+        <br>
+        <label>
+          Away Team Name:
+          <input type="text" formControlName="awayName">
+          <div *ngIf="matchForm.get('awayName')?.invalid && (matchForm.get('awayName')?.dirty || matchForm.get('awayName')?.touched)">
+            <div *ngIf="matchForm.get('awayName')?.errors?.['required']">Away Team Name is required.</div>
+            <div *ngIf="matchForm.get('awayName')?.errors?.['minlength']">Away Team Name must be at least 1 character long.</div>
+          </div>
+        </label>
+        <br>
+        <button type="submit" [disabled]="matchForm.invalid">Add Match</button>
+  </form>
+</div>

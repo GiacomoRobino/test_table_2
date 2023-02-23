@@ -1,0 +1,11 @@
+app-single-column-header {
+    border: 1px solid black ;
+    margin: 2px 0;
+    background-color: beige;
+    width: var(--columnWidth);
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+}
